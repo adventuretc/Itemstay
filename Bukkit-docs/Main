@@ -9,18 +9,20 @@ https://www.youtube.com/watch?v=RCeH8xT2pGk\\
 https://www.youtube.com/watch?v=W6_wwORq2G4 (Portuguese)
 
 ===Commands===
+
 |=Command|=Function|
-|**/itemstay**|Create a new display. The next item dropped will be put on display.|
-|**/itemstay list**|Able to be used by anyone. Shows displays within 5 blocks of you.|
-|**/itemstay delete <ID>**|Delete a display. \\Find the ID of a display through /itemstay list.|
-|**/itemstay respawn**|Respawn every display.|
-|**/itemstay reload**|Reload the configuration, reload the displays from file and respawn them.|
+|<<size 110%>>**/itemstay**<</size>>|<<size 110%>>Create a new display. The next item dropped will be put on display.<</size>>|
+|<<size 110%>>**/itemstay list**<</size>>|<<size 110%>>Able to be used by anyone. Shows displays within 5 blocks of you.<</size>>|
+|<<size 110%>>**/itemstay delete <ID>**<</size>>|<<size 110%>>Delete a display. \\Find the ID of a display through /itemstay list.<</size>>|
+|<<size 110%>>**/itemstay respawn**<</size>>|<<size 110%>>Respawn every display.<</size>>|
+|<<size 110%>>**/itemstay reload**<</size>>|<<size 110%>>Reload the configuration, reload the displays from file and respawn them.<</size>>|
+
 
 ===Permissions===
 |=Permission node|=Access|
-|**itemstay.admin**|All commands of the plugin.|
-|**itemstay.create**|/itemstay \\'/itemstay delete <ID>' for displays created by you.|
-|**itemstay.delete**|'/itemstay delete <ID>' for every display.|
+|<<size 110%>>**itemstay.admin**<</size>>|<<size 110%>>All commands of the plugin.<</size>>|
+|<<size 110%>>**itemstay.create**<</size>>|<<size 110%>>/itemstay \\'/itemstay delete <ID>' for displays created by you.<</size>>|
+|<<size 110%>>**itemstay.delete**<</size>>|<<size 110%>>'/itemstay delete <ID>' for every display.<</size>>|
 
 ===Support===
 Leave a comment or make a support ticket for help with the plugin.\\
