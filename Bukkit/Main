@@ -1,0 +1,38 @@
+===Summary===
+ItemStay allows you to drop an item and make it so that the item that you dropped cannot be picked up by anyone and will not despawn! Items dropped by users will NOT be stacked with the ItemStay items like they do using similar plugins.
+
+===Videos===
+<<youtube 1tLEjAv5boI>>
+
+Other videos:\\
+https://www.youtube.com/watch?v=RCeH8xT2pGk\\
+https://www.youtube.com/watch?v=W6_wwORq2G4 (Portuguese)
+
+===Commands===
+|=Command|=Function|
+|**/itemstay**|Create a new display. The next item dropped will be put on display.|
+|**/itemstay list**|Able to be used by anyone. Shows displays within 5 blocks of you.|
+|**/itemstay delete <ID>**|Delete a display. \\Find the ID of a display through /itemstay list.|
+|**/itemstay respawn**|Respawn every display.|
+|**/itemstay reload**|Reload the configuration, reload the displays from file and respawn them.|
+
+===Permissions===
+|=Permission node|=Access|
+|**itemstay.admin**|All commands of the plugin.|
+|**itemstay.create**|/itemstay \\'/itemstay delete <ID>' for displays created by you.|
+|**itemstay.delete**|'/itemstay delete <ID>' for every display.|
+
+===Support===
+Leave a comment or make a support ticket for help with the plugin.\\
+Plugin now cross-released at [[http://www.spigotmc.org/resources/itemstay.4403/|Spigot]].
+
+===Compatibility===
+The plugin should be compatible with pretty much any version you might be running, including 1.7.x, Spigot 1.8, 1.8.8, etc.
+
+===Credits===
+* garrett2smart87 - plugin inspirer, manager
+* nighteyes604 - plugin author
+* adventuretc - maintainer, developer
+
+===Source code===
+You can find the source code inside the .jar file.
