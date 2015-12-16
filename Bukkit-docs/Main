@@ -1,0 +1,40 @@
+===Summary===
+ItemStay allows you to drop an item and make it so that the item that you dropped cannot be picked up by anyone and will not despawn! Items dropped by users will NOT be stacked with the ItemStay items like they do using similar plugins.
+
+===Videos===
+<<youtube 1tLEjAv5boI>>
+
+Other videos:\\
+https://www.youtube.com/watch?v=RCeH8xT2pGk\\
+https://www.youtube.com/watch?v=W6_wwORq2G4 (Portuguese)
+
+===Commands===
+
+|=Command|=Function|
+|<<size 110%>>**/itemstay**<</size>>|<<size 110%>>Create a new display. The next item dropped will be put on display.<</size>>|
+|<<size 110%>>**/itemstay list**<</size>>|<<size 110%>>Able to be used by anyone. Shows displays within 5 blocks of you.<</size>>|
+|<<size 110%>>**/itemstay delete <ID>**<</size>>|<<size 110%>>Delete a display. \\Find the ID of a display through /itemstay list.<</size>>|
+|<<size 110%>>**/itemstay respawn**<</size>>|<<size 110%>>Respawn every display.<</size>>|
+|<<size 110%>>**/itemstay reload**<</size>>|<<size 110%>>Reload the configuration, reload the displays from file and respawn them.<</size>>|
+
+
+===Permissions===
+|=Permission node|=Access|
+|<<size 110%>>**itemstay.admin**<</size>>|<<size 110%>>All commands of the plugin.<</size>>|
+|<<size 110%>>**itemstay.create**<</size>>|<<size 110%>>/itemstay \\'/itemstay delete <ID>' for displays created by you.<</size>>|
+|<<size 110%>>**itemstay.delete**<</size>>|<<size 110%>>'/itemstay delete <ID>' for every display.<</size>>|
+
+===Support===
+Leave a comment or make a support ticket for help with the plugin.\\
+Plugin now cross-released at [[http://www.spigotmc.org/resources/itemstay.4403/|Spigot]].
+
+===Compatibility===
+The plugin should be compatible with pretty much any version you might be running, including 1.7.x, Spigot 1.8, 1.8.8, etc.
+
+===Credits===
+* garrett2smart87 - plugin inspirer, manager
+* nighteyes604 - plugin author
+* adventuretc - maintainer, developer
+
+===Source code===
+You can find the source code inside the .jar file.
