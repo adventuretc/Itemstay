@@ -1,0 +1,21 @@
+name: ItemStay
+main: me.nighteyes604.ItemStay.ItemStay
+version: 1.5.6
+description: A plugin allowing users to create item displays.
+softdepend: [Multiverse-Core, Multiworld]
+load: POSTWORLD
+author: Nighteyes604, speeed
+commands:
+  itemstay:
+    description: The base for all item display commands. Type /itemstay help for more information.
+    usage: /<command> help for more information.
+permissions:
+  itemstay.admin:
+    description: Grants access to display creation, deletion of any display, respawning items and reloading items from file.
+    default: op
+  itemstay.create:
+    description: Grants access to display creation and deletion of owned displays.
+    default: op
+  itemstay.delete:
+    description: Grants access to deletion of any display.
+    default: op

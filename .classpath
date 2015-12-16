@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path=""/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="lib" path="N:/bukkit spigot code/SPIGOT buildtools/5/craftbukkit-1.8.8.jar"/>
+	<classpathentry kind="lib" path="N:/bukkit spigot code/plugin libs/Clearlag v2.8.3.jar"/>
+	<classpathentry kind="output" path=""/>
+</classpath>
