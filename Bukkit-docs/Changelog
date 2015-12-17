@@ -1,0 +1,25 @@
+-
+=== 1.5.5 ===
+ * Added item removal check as a workaround against item removal plugins
+ * The material of saved items are now stored as names rather than numeric ID's
+
+=== 1.5.5b ===
+ * Now preventing miscellaneous inventory pick ups. (InventoryPickupItemEvent)
+ * Fixed a respawn bug.
+
+=== 1.5.6 ===
+===== Added: =====
+ * Proper API (getItemList, registerItem, deregisterItem, etc.)
+ * Reload and respawn command
+
+===== Removed: =====
+ * Unnecessary item type data from items.csv (the previous format is supported for loading, but saving is done in the new format)
+
+===== Bug fixes: =====
+ * Newly dropped items are no longer despawned if the display creation fails
+ * Items are no longer respawned (duped) needlessly upon chunk loading
+
+===== Note: =====
+ * This update breaks compatibility with ChestIcon 1.1 and any other plugins that were using ItemStay before 1.5.6.
+ * If you wish to use ChestIcon 1.1 or lower, please stay with ItemStay 1.5.5b.
+ * As of the December of 2015, the maintainer of ChestIcon has been inactive for half a year.

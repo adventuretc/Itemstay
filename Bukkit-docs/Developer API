@@ -1,0 +1,32 @@
+More info can be found in the javadoc (inside the jar file).
+
+<<code Java>>
+public class ItemStay extends JavaPlugin
+	public QInfo registerItem(String owner, Item item)
+	public QInfo registerItem(String owner, ItemStack itemStack, Location location)
+	public QInfo deregisterItem(int id)
+	public QInfo deregisterItem(Location location)
+	public FrozenItem[] getItemList()
+
+public class FrozenItem
+	public String getOwner()
+	public Item getItem()
+	public Location getLocation()
+	public Material getMaterial()
+	public short getData()
+	public String getWorldName()
+	public int getBlockX()
+	public int getBlockY()
+	public int getBlockZ()
+	public boolean isOwnedBy(Player p)
+	public int getId()
+ 
+public class QInfo
+	public int getId()
+	public QResult getResult()
+ 
+public enum QResult
+	SUCCESS,
+	LOCATION_TAKEN,
+	NOT_FOUND;
+<</code>>
