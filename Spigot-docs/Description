@@ -9,30 +9,30 @@ https://www.youtube.com/watch?v=RCeH8xT2pGk
 https://www.youtube.com/watch?v=W6_wwORq2G4 (Portuguese)
 
 [SIZE=7]Commands[/SIZE]
-Command
+[B]Command[/B]
 [INDENT]Function[/INDENT]
-/itemstay
+[B]/itemstay[/B]
 [INDENT]Create a new display. The next item dropped will be put on display.[/INDENT]
-/itemstay list
+[B]/itemstay list[/B]
 [INDENT]Able to be used by anyone. Shows displays within 5 blocks of you.[/INDENT]
-/itemstay delete <ID>
+[B]/itemstay delete <ID>[/B]
 [INDENT]Delete a display.
 Find the ID of a display through /itemstay list.[/INDENT]
-/itemstay respawn
+[B]/itemstay respawn[/B]
 [INDENT]Respawn every display.[/INDENT]
-/itemstay reload
+[B]/itemstay reload[/B]
 [INDENT]Reload the configuration, reload the displays from file and respawn them.[/INDENT]
 
 
 [SIZE=7]Permissions[/SIZE]
-Permission node
+[B]Permission node[/B]
 [INDENT]Access[/INDENT]
-itemstay.admin
+[B]itemstay.admin[/B]
 [INDENT]All commands of the plugin.[/INDENT]
-itemstay.create
+[B]itemstay.create[/B]
 [INDENT]/itemstay
 '/itemstay delete <ID>' for displays created by you.[/INDENT]
-itemstay.delete
+[B]itemstay.delete[/B]
 [INDENT]'/itemstay delete <ID>' for every display.[/INDENT]
 
 [SIZE=7]Support[/SIZE]
@@ -50,3 +50,4 @@ adventuretc - maintainer, developer
 
 [SIZE=7]Source code[/SIZE]
 You can find the source code inside the .jar file.
+[URL=https://github.com/adventuretc/Itemstay]The source is also available on Github.[/URL] Feel free to make a suggestion.
