@@ -24,3 +24,4 @@
  * This update breaks compatibility with ChestIcon 1.1 and any other plugins that were using ItemStay before 1.5.6.
  * If you wish to use ChestIcon 1.1 or lower, please stay with ItemStay 1.5.5b.
  * As of the December of 2015, the maintainer of ChestIcon has been inactive for half a year.
+ * If you want to downgrade to ItemStay 1.5.5b save a backup of your items.csv before upgrading to ItemStay 1.5.6 or edit manually.
