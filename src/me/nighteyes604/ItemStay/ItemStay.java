@@ -291,12 +291,13 @@ public class ItemStay extends JavaPlugin
 	 * @param owner Name of the owner, to be saved.
 	 * @param item A dropped item.
 	 * @return Information about the outcome. Result value can be: SUCCESS, LOCATION_TAKEN
+	 * @author adventuretc
 	 */
 	public QInfo registerItem(String owner, Item item)
 	{
 		for (FrozenItem fi : frozenItems)
 		{
-			if (!fi.hasWorld())
+			if (!fi.hasWorldAndChunk())
 				continue;
 
 			if (fi.getLocation().equals(new Location(item.getWorld(), item.getLocation().getBlockX(), item.getLocation().getBlockY(), item.getLocation().getBlockZ())))
@@ -319,12 +320,13 @@ public class ItemStay extends JavaPlugin
 	 * @param itemStack Can be any itemstack.
 	 * @param location Can be any existing location. Always rounded to and administered as whole blocks.
 	 * @return Information about the outcome. Result value can be: SUCCESS, LOCATION_TAKEN
+	 * @author adventuretc
 	 */
 	public QInfo registerItem(String owner, ItemStack itemStack, Location location)
 	{
 		for (FrozenItem fi : frozenItems)
 		{
-			if (!fi.hasWorld())
+			if (!fi.hasWorldAndChunk())
 				continue;
 
 			if (fi.getLocation().equals(new Location(location.getWorld(), location.getBlockX(), location.getBlockY(), location.getBlockZ())))
@@ -344,6 +346,7 @@ public class ItemStay extends JavaPlugin
 	/**
 	 * Removes an item display by its ItemStay ID.
 	 * @return Information about the outcome. Result value can be: SUCCESS, NOT_FOUND
+	 * @author adventuretc
 	 */
 	public QInfo deregisterItem(int id)
 	{
@@ -367,12 +370,13 @@ public class ItemStay extends JavaPlugin
 	 * Removes the item display at the given location.
 	 * @param location Location of the item. Rounded to blocks internally.
 	 * @return Information about the outcome. Result value can be: SUCCESS, NOT_FOUND
+	 * @author adventuretc
 	 */
 	public QInfo deregisterItem(Location location)
 	{
 		for (FrozenItem fi : frozenItems)
 		{
-			if (!fi.hasWorld())
+			if (!fi.hasWorldAndChunk())
 				continue;
 
 			if (fi.getLocation().equals(new Location(location.getWorld(), location.getBlockX(), location.getBlockY(), location.getBlockZ())))
@@ -395,6 +399,7 @@ public class ItemStay extends JavaPlugin
 	 * The item ID can be accessed via the FrozenItem class.
 	 * Modifying any returned data may cause the plugin to disfunction.
 	 * @return An array of the stored items.
+	 * @author adventuretc
 	 */
 	public FrozenItem[] getItemList()
 	{

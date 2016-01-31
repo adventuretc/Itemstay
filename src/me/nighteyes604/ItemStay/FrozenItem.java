@@ -44,10 +44,7 @@ public class FrozenItem
 
 	void respawnIfDead()
 	{
-		if (!hasWorld())
-			return;
-
-		if (!location.getChunk().isLoaded())
+		if (!hasWorldAndChunk())
 			return;
 
 		if (item == null)
@@ -66,10 +63,7 @@ public class FrozenItem
 
 	void respawn()
 	{
-		if (!hasWorld())
-			return;
-
-		if (!location.getChunk().isLoaded())
+		if (!hasWorldAndChunk())
 			return;
 
 		if (item != null)
@@ -85,7 +79,7 @@ public class FrozenItem
 
 	void destroy()
 	{
-		if (!hasWorld())
+		if (!hasWorldAndChunk())
 			return;
 
 		removeDuplicateItems();
@@ -120,10 +114,26 @@ public class FrozenItem
 		removeDuplicateItems();
 	}
 
-	boolean hasWorld()
+	boolean hasWorldAndChunk()
 	{
 		if (plugin.getServer().getWorld(this.worldName) != null)
-			return true;
+		{
+			if (hasChunk())
+			{
+				return true;
+			}
+		}
+
+		return false;
+	}
+
+	boolean hasChunk()
+	{
+		if (location != null)
+			if (location.getChunk() != null)
+				if (location.getChunk().isLoaded())
+					return true;
+
 		return false;
 	}
 

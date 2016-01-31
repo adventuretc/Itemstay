@@ -33,7 +33,7 @@ class ItemStayListener implements Listener
 	{
 		for (FrozenItem fi : plugin.frozenItems)
 		{
-			if (!fi.hasWorld())
+			if (!fi.hasWorldAndChunk())
 				continue;
 
 			if (event.getEntity().equals(fi.getItem()))
@@ -67,7 +67,7 @@ class ItemStayListener implements Listener
 	{
 		for (FrozenItem fi : plugin.frozenItems)
 		{
-			if (!fi.hasWorld())
+			if (!fi.hasWorldAndChunk())
 				continue;
 
 			if (fi.getLocation().getChunk().equals(event.getChunk()))
@@ -95,7 +95,7 @@ class ItemStayListener implements Listener
 
 					for (FrozenItem fi : plugin.frozenItems)
 					{
-						if (!fi.hasWorld())
+						if (!fi.hasWorldAndChunk())
 							continue;
 
 						if (fi.getLocation().equals(new Location(item.getWorld(), item.getLocation().getBlockX(), item.getLocation().getBlockY(), item.getLocation().getBlockZ())))

@@ -1,5 +1,9 @@
 package me.nighteyes604.ItemStay;
 
+/**
+ * Query information.
+ * @author adventuretc
+ */
 public class QInfo
 {
 	private int id;

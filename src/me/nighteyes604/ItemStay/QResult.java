@@ -1,7 +1,8 @@
 package me.nighteyes604.ItemStay;
 
 /**
- *  Result of an item registration query.
+ * Result of an item registration query. The name stands for query result.
+ * @author adventuretc
  */
 public enum QResult
 {
