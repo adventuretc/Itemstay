@@ -130,9 +130,10 @@ public class FrozenItem
 	boolean hasChunk()
 	{
 		if (location != null)
-			if (location.getChunk() != null)
-				if (location.getChunk().isLoaded())
-					return true;
+			if (location.getWorld() != null)
+				if (location.getChunk() != null)
+					if (location.getChunk().isLoaded())
+						return true;
 
 		return false;
 	}
