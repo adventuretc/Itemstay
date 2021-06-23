@@ -4,7 +4,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 import me.minebuilders.clearlag.events.EntityRemoveEvent;
-import me.nighteyes604.ItemStay.FrozenItem;
 
 import org.bukkit.ChatColor;
 import org.bukkit.Location;
@@ -15,8 +14,9 @@ import org.bukkit.event.Listener;
 import org.bukkit.event.entity.ItemDespawnEvent;
 import org.bukkit.event.inventory.InventoryPickupItemEvent;
 import org.bukkit.event.player.PlayerDropItemEvent;
-import org.bukkit.event.player.PlayerPickupItemEvent;
+import org.bukkit.event.entity.EntityPickupItemEvent;
 import org.bukkit.event.world.ChunkLoadEvent;
+import org.bukkit.inventory.meta.Damageable;
 
 class ItemStayListener implements Listener
 {
@@ -104,8 +104,8 @@ class ItemStayListener implements Listener
 							return;
 						}
 					}
-
-					plugin.frozenItems.add(new FrozenItem(event.getPlayer().getName(), item.getItemStack().getType(), item.getItemStack().getDurability(), item.getLocation().getWorld().getName(), item.getLocation().getBlockX(), item.getLocation().getBlockY(), item.getLocation().getBlockZ()));
+					short damage = (short)((Damageable)item.getItemStack().getItemMeta()).getDamage();
+					plugin.frozenItems.add(new FrozenItem(event.getPlayer().getName(), item.getItemStack().getType(), damage, item.getLocation().getWorld().getName(), item.getLocation().getBlockX(), item.getLocation().getBlockY(), item.getLocation().getBlockZ()));
 					item.remove();
 					plugin.save();
 					FrozenItem fi = plugin.frozenItems.get(plugin.frozenItems.size() - 1);
@@ -119,7 +119,7 @@ class ItemStayListener implements Listener
 
 	//Prevent player pickup
 	@EventHandler(priority = EventPriority.HIGHEST, ignoreCancelled = true)
-	public void onPlayerPickupItemEvent(PlayerPickupItemEvent event)
+	public void onEntityPickupItemEvent(EntityPickupItemEvent event)
 	{
 		if (!event.getItem().getItemStack().hasItemMeta())
 			return;

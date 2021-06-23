@@ -23,6 +23,7 @@ import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.entity.Item;
 import org.bukkit.entity.Player;
 import org.bukkit.inventory.ItemStack;
+import org.bukkit.inventory.meta.Damageable;
 import org.bukkit.plugin.java.JavaPlugin;
 import org.bukkit.scheduler.BukkitRunnable;
 import org.bukkit.scheduler.BukkitTask;
@@ -305,8 +306,8 @@ public class ItemStay extends JavaPlugin
 				return new QInfo(fi.getId(), QResult.LOCATION_TAKEN);
 			}
 		}
-
-		frozenItems.add(new FrozenItem(owner, item.getItemStack().getType(), item.getItemStack().getDurability(), item.getLocation().getWorld().getName(), item.getLocation().getBlockX(), item.getLocation().getBlockY(), item.getLocation().getBlockZ()));
+		short damage = (short)((Damageable)item.getItemStack().getItemMeta()).getDamage();
+		frozenItems.add(new FrozenItem(owner, item.getItemStack().getType(), damage, item.getLocation().getWorld().getName(), item.getLocation().getBlockX(), item.getLocation().getBlockY(), item.getLocation().getBlockZ()));
 		save();
 		FrozenItem newfi = frozenItems.get(frozenItems.size() - 1);
 		newfi.respawn();
@@ -334,8 +335,8 @@ public class ItemStay extends JavaPlugin
 				return new QInfo(fi.getId(), QResult.LOCATION_TAKEN);
 			}
 		}
-
-		frozenItems.add(new FrozenItem(owner, itemStack.getType(), itemStack.getDurability(), location.getWorld().getName(), location.getBlockX(), location.getBlockY(), location.getBlockZ()));
+		short damage = (short)((Damageable)itemStack.getItemMeta()).getDamage();
+		frozenItems.add(new FrozenItem(owner, itemStack.getType(), damage, location.getWorld().getName(), location.getBlockX(), location.getBlockY(), location.getBlockZ()));
 		save();
 		FrozenItem newfi = frozenItems.get(frozenItems.size() - 1);
 		newfi.respawn();
@@ -507,7 +508,6 @@ public class ItemStay extends JavaPlugin
 		}
 	}
 
-	@SuppressWarnings("deprecation")
 	private void loadDataFile()
 	{
 		File folder = getDataFolder();
@@ -564,17 +564,7 @@ public class ItemStay extends JavaPlugin
 					offset = 1;
 
 				Material mat;
-				try
-				{
-					//old system, numeric id
-					mat = Material.getMaterial(Integer.parseInt(lineBits[5 + offset]));
-				}
-				catch (NumberFormatException e)
-				{
-					//new system, mat name
-					mat = Material.getMaterial(lineBits[5 + offset]);
-				}
-
+				mat = Material.getMaterial(lineBits[5 + offset]);
 				short data = Short.valueOf(lineBits[6 + offset]);
 
 				FrozenItem fi = new FrozenItem(player, mat, data, lineBits[1], x, y, z);

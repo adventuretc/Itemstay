@@ -1,12 +1,12 @@
 package me.nighteyes604.ItemStay;
 
 import java.util.Locale;
-
 import org.bukkit.Location;
 import org.bukkit.Material;
 import org.bukkit.entity.Item;
 import org.bukkit.entity.Player;
 import org.bukkit.inventory.ItemStack;
+import org.bukkit.inventory.meta.Damageable;
 import org.bukkit.inventory.meta.ItemMeta;
 import org.bukkit.util.Vector;
 
@@ -103,7 +103,8 @@ public class FrozenItem
 
 	private void place()
 	{
-		ItemStack stack = new ItemStack(material, 1, data);
+		ItemStack stack = new ItemStack(material, 1);
+		((Damageable)stack.getItemMeta()).setDamage(data);
 		item = location.getWorld().dropItem(new Location(location.getWorld(), location.getX() + dropOffset.getX(), location.getY() + dropOffset.getY(), location.getZ() + dropOffset.getZ()), stack);
 
 		ItemMeta m = item.getItemStack().getItemMeta();
