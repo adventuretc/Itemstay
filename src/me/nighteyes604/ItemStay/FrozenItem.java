@@ -77,7 +77,7 @@ public class FrozenItem
 		}
 	}
 
-	void destroy()
+	public void destroy()
 	{
 		if (!hasWorldAndChunk())
 			return;
