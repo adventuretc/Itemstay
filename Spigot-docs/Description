@@ -1,10 +1,16 @@
+[COLOR=#b35900][B][SIZE=4][B]Update 2022-07-20:[/B][/SIZE][/B][/COLOR]
+I recommend using the plugin called [URL='https://www.spigotmc.org/resources/itemstayput.90962/']ItemStayPut[/URL] at this point.
+[COLOR=#b35900][B][SIZE=4][/SIZE][/B]
+[B][SIZE=4]Update 2017-02-18:[/SIZE][/B][/COLOR]
+[SIZE=4]I recommend using [URL='https://dev.bukkit.org/projects/itemcase']ItemCase[/URL], as it saves items in a better way than ItemStay does and it uses player UUID's instead of plain text names.
+
 ItemStay v.1.5.6 depends on ClearLag due to a mistake.
 The plugin is a bit outdated by now, but still usable. Here is how you can install it:
 Step 1: Download the latest ClearLag or the version that best matches your server version (I tested with ClearLag v2.9.3 labeled for Bukkit 1.10, running spigot-1.11.2-R0.1-SNAPSHOT)
 Step 2: Download ItemStay v.1.5.6.
 Alternatively, you can use older versions of ItemStay which do not require ClearLag.
 
-The plugin doesn't support enchanted items and tipped arrows yet.
+The plugin doesn't support enchanted items and tipped arrows yet.[/SIZE]
 [SIZE=7]
 Summary[/SIZE]
 ItemStay allows you to drop an item and make it so that the item that you dropped cannot be picked up by anyone and will not despawn! Items dropped by users will NOT be stacked with the ItemStay items like they do using similar plugins.
