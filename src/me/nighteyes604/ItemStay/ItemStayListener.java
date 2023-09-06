@@ -4,7 +4,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 import me.minebuilders.clearlag.events.EntityRemoveEvent;
-import me.nighteyes604.ItemStay.FrozenItem;
 
 import org.bukkit.ChatColor;
 import org.bukkit.Location;
@@ -15,10 +14,11 @@ import org.bukkit.event.Listener;
 import org.bukkit.event.entity.ItemDespawnEvent;
 import org.bukkit.event.inventory.InventoryPickupItemEvent;
 import org.bukkit.event.player.PlayerDropItemEvent;
-import org.bukkit.event.player.PlayerPickupItemEvent;
+import org.bukkit.event.entity.EntityPickupItemEvent;
 import org.bukkit.event.world.ChunkLoadEvent;
+import org.bukkit.inventory.meta.Damageable;
 
-class ItemStayListener implements Listener
+public class ItemStayListener implements Listener
 {
 	private static ItemStay plugin;
 
@@ -28,7 +28,7 @@ class ItemStayListener implements Listener
 	}
 
 	//Try to prevent despawning from unknown causes
-	@EventHandler(priority = EventPriority.NORMAL)
+	@EventHandler //(priority = EventPriority.NORMAL)
 	public void onItemDespawnEvent(ItemDespawnEvent event)
 	{
 		for (FrozenItem fi : plugin.frozenItems)
@@ -44,7 +44,7 @@ class ItemStayListener implements Listener
 	}
 
 	//Prevent pickup by misc. inventories/entities
-	@EventHandler(priority = EventPriority.HIGHEST, ignoreCancelled = true)
+	@EventHandler //(priority = EventPriority.HIGHEST, ignoreCancelled = true)
 	public void onInventoryPickupItemEvent(final InventoryPickupItemEvent e)
 	{
 		if (!e.getItem().getItemStack().hasItemMeta())
@@ -62,23 +62,23 @@ class ItemStayListener implements Listener
 		}
 	}
 
-	@EventHandler(priority = EventPriority.MONITOR, ignoreCancelled = true)
+	@EventHandler //(priority = EventPriority.MONITOR, ignoreCancelled = true)
 	public void onChunkLoadEvent(final ChunkLoadEvent event)
-	{
-		for (FrozenItem fi : plugin.frozenItems)
-		{
-			if (!fi.hasWorldAndChunk())
-				continue;
+	{ // Disabled
+		// for (FrozenItem fi : plugin.frozenItems)
+		// {
+		// 	if (!fi.hasWorldAndChunk())
+		// 		continue;
 
-			if (fi.getLocation().getChunk().equals(event.getChunk()))
-			{
-				fi.respawnIfDead();
-			}
-		}
+		// 	if (fi.getLocation().getChunk().equals(event.getChunk()))
+		// 	{
+		// 		fi.respawnIfDead();
+		// 	}
+		// }
 	}
 
 	//Handle item placing
-	@EventHandler(priority = EventPriority.NORMAL, ignoreCancelled = true)
+	@EventHandler //(priority = EventPriority.NORMAL, ignoreCancelled = true)
 	public void onPlayerDropItemEvent(final PlayerDropItemEvent event)
 	{
 		if (plugin.saveNextItem.contains(event.getPlayer().getName().toLowerCase()))
@@ -104,8 +104,8 @@ class ItemStayListener implements Listener
 							return;
 						}
 					}
-
-					plugin.frozenItems.add(new FrozenItem(event.getPlayer().getName(), item.getItemStack().getType(), item.getItemStack().getDurability(), item.getLocation().getWorld().getName(), item.getLocation().getBlockX(), item.getLocation().getBlockY(), item.getLocation().getBlockZ()));
+					short damage = (short)((Damageable)item.getItemStack().getItemMeta()).getDamage();
+					plugin.frozenItems.add(new FrozenItem(event.getPlayer().getName(), item.getItemStack().getType(), damage, item.getLocation().getWorld().getName(), item.getLocation().getBlockX(), item.getLocation().getBlockY(), item.getLocation().getBlockZ()));
 					item.remove();
 					plugin.save();
 					FrozenItem fi = plugin.frozenItems.get(plugin.frozenItems.size() - 1);
@@ -118,8 +118,8 @@ class ItemStayListener implements Listener
 	}
 
 	//Prevent player pickup
-	@EventHandler(priority = EventPriority.HIGHEST, ignoreCancelled = true)
-	public void onPlayerPickupItemEvent(PlayerPickupItemEvent event)
+	@EventHandler //(priority = EventPriority.HIGHEST, ignoreCancelled = true)
+	public void onEntityPickupItemEvent(EntityPickupItemEvent event)
 	{
 		if (!event.getItem().getItemStack().hasItemMeta())
 			return;
